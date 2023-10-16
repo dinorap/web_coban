@@ -1,0 +1,142 @@
+footer {
+    background-color: #f5f5f5;
+    padding: 30px 0;
+    margin-top: 50px;
+  }
+  footer .footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer .footer-content h2 {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+  }
+  footer .footer-content .signup form {
+    display: flex;
+    align-items: center;
+  }
+  footer .footer-content .signup form label {
+    color: #636363;
+    padding: 4px 10px 4px 0;
+  }
+  footer .footer-content .signup form input {
+    font-family: "Titillium Web", sans-serif;
+    font-family: "PT Serif", serif;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
+    max-width: 330px;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  footer .footer-content .signup form button {
+    cursor: pointer;
+    width: 250px;
+    padding: 8px 10px;
+    font-weight: 800;
+    color: white;
+    font-size: 1rem;
+    background-color: #105999;
+    border: none;
+    border-radius: 4px;
+  }
+  footer .footer-content .signup form button:hover {
+    background-color: #193c5b;
+  }
+  footer .footer-content .footer-btns {
+    margin: 20px 0;
+  }
+  footer .footer-content .footer-btns hr {
+    width: 100%;
+  }
+  footer .footer-content .footer-btns .footer-link-1,
+  footer .footer-content .footer-btns .footer-link-2,
+  footer .footer-content .footer-btns .footer-link-3 {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .footer-content .footer-btns .footer-link-1 h5,
+  footer .footer-content .footer-btns .footer-link-2 h5,
+  footer .footer-content .footer-btns .footer-link-3 h5 {
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 5px;
+    color: #383838;
+  }
+  footer .footer-content button {
+    cursor: pointer;
+    width: fit-content;
+    padding: 8px 10px;
+    font-weight: 800;
+    color: white;
+    font-size: 1rem;
+    background-color: #154d7e;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+  }
+  footer .footer-content button:hover {
+    background-color: #193c5b;
+  }
+  footer .footer-content .socials {
+    display: flex;
+    margin: 20px 0;
+  }
+  footer .footer-content .socials .apps {
+    margin: 10px 30px;
+  }
+  footer .footer-content .socials .apps h3 {
+    font-weight: 300;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  footer .footer-content .socials .apps .app-img img {
+    margin-right: 20px;
+    width: 110px;
+  }
+  footer .footer-content .socials .apps .social-img i {
+    font-size: 1.6rem;
+    margin-right: 10px;
+  }
+  footer .footer-content .socials .apps .social-img .fa-facebook {
+    color: #3b5998;
+  }
+  footer .footer-content .socials .apps .social-img .fa-twitter {
+    color: #1da1f2;
+  }
+  footer .footer-content .socials .apps .social-img .fa-linkedin-in {
+    color: #0077b5;
+  }
+  footer .footer-content .socials .apps .social-img .fa-pinterest {
+    color: #e60023;
+  }
+  footer .footer-content .footer-end {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  footer .footer-content .footer-end a {
+    text-decoration: none;
+    color: #383838;
+  }
+  footer .footer-content .footer-end a h3 {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  footer .footer-content .footer-end a h3 i {
+    font-size: 2rem;
+    margin-left: 20px;
+  }

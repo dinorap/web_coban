@@ -1,0 +1,425 @@
+:root {
+    --text-blur-color: #a0a4a8;
+    --color-green-dan-tri: #1a7900;
+    --color-audio-background: #f1f5f9;
+}
+
+.detail-container {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.left-page-detail {
+    width: 5%;
+}
+
+.center-page-detail {
+    width: 70%;
+}
+
+.right-page-detail {
+    width: 25%;
+}
+
+.center-page-detail .category-name {
+    text-transform: uppercase;
+    color: var(--text-blur-color);
+}
+
+.article-content .article-title {
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+
+/* link icon */
+.left-page-detail {
+}
+.icon-container {
+    position: sticky;
+    top: 4rem;
+}
+.left-page-detail .link-icon {
+}
+.left-page-detail .link-icon i {
+    color: var(--text-blur-color);
+    padding-bottom: 1rem;
+    font-size: 2.2rem;
+}
+.icon-facebook:hover i {
+    color: #2962af;
+}
+.icon-share:hover i {
+    color: rgb(116, 204, 226);
+}
+.icon-print {
+    padding-bottom: 2rem;
+}
+.icon-print:hover i {
+    color: rgb(182, 152, 124);
+}
+.icon-comment a {
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+}
+
+/* end of link icon */
+
+/* article-author */
+.article-author {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.article-author .author-avatar {
+    border-radius: 50%;
+    width: 2.6rem;
+}
+.article-author .writer-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.article-author .created-date {
+    color: var(--text-blur-color);
+}
+/* end article-author */
+
+/* article-audio */
+.article-audio {
+    background-color: var(--color-audio-background);
+    border-radius: 4rem;
+}
+.article-audio-container {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.article-audio .play-button {
+    background-color: var(--color-green-dan-tri);
+    padding: 0.5rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.article-audio .play-button i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.article-audio-container .audio-control {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+}
+.article-audio-container .audio-track-bar {
+    width: 60%;
+    border-top: 4px solid #ccc;
+}
+.article-audio-container .audio-voice {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+}
+/* end of article-audio */
+
+/* main article content */
+.article-preview-content {
+    margin-top: 1rem;
+}
+.article-preview-content p {
+    font-size: 1.4rem;
+    font-style: italic;
+    padding-bottom: 2.2rem;
+}
+
+.article-main-content p {
+    font-size: 1.4rem;
+    padding-bottom: 1.4rem;
+}
+/* end of main article content */
+
+/* right article detail */
+.right-page-detail {
+    margin-left: 2rem;
+    border-top: 2px solid #ccc;
+    padding-top: 1rem;
+}
+
+.right-page-detail .most-read {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+.right-page-detail .most-read span {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.title-section.title-section-most-read {
+    display: flex;
+    gap: 0.5rem;
+}
+.number-order {
+    color: var(--text-blur-color);
+    font-size: 1.2rem;
+}
+/* end of right article detail */
+
+/* reaction */
+.article-reaction {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.article-reaction .reaction-avatar {
+    border-radius: 50%;
+    width: 2.6rem;
+}
+.article-reaction .reaction-given {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.article-reaction .reaction-emoji span {
+    padding: 0.5rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 30px;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+.gift-for-author {
+    box-shadow: 3px 3px 3px #e7e7e7;
+    width: fit-content;
+    border-radius: 1rem;
+    border: 1px solid var(--text-blur-color);
+}
+.gift-for-author .box {
+    padding: 0.8rem;
+}
+.gift-for-author i {
+    color: orange;
+    font-size: 1.5rem;
+    padding-right: 0.8rem;
+}
+.gift-for-author .text span {
+    font-weight: 650;
+    font-size: 1.1rem;
+}
+.note-for-reader {
+    color: var(--text-blur-color);
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* end of reaction */
+
+/* related article */
+.related-articles-container {
+    border: 1px solid #eee;
+}
+.related-articles {
+    padding: 1.5rem;
+}
+.related-articles .heading {
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+.related-articles .articles-container {
+    margin-top: 1.5rem;
+}
+/* end related article */
+
+/* tags */
+.tag-container {
+    padding: 2rem 0 2rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 2rem;
+}
+.tag-container .text {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.tag-container .tags {
+}
+.tag-container .tags ul {
+    display: flex;
+    gap: 1rem;
+}
+.tag-container .tags li a {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+    border: 1px solid #eee;
+    border-radius: 5rem;
+    background-color: var(--color-audio-background);
+}
+.tag-container .tags li:hover a {
+    background-color: var(--color-green-dan-tri);
+    color: #fff;
+}
+/* end tags */
+
+/* being interested articles */
+.being-interested-container {
+    border-top: 2px solid var(--color-green-dan-tri);
+    padding-top: 1rem;
+}
+.being-interested {
+}
+.being-interested .text {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.being-interested .articles-container {
+    margin-top: 1rem;
+}
+/* end being interested articles */
+
+/* comment */
+.comment-section {
+    border: 1px solid #eee;
+    margin-bottom: 2rem;
+}
+.comment-section .comment-container {
+    padding: 1.5rem;
+}
+.comment-container .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+.comment-section .comment-container .left i,
+.comment-count {
+    font-size: 1.8rem;
+}
+.comment-container .left i {
+    color: var(--color-green-dan-tri);
+    padding-right: 0.5rem;
+}
+.comment-container .top .right span {
+    font-size: 1.1rem;
+}
+.comment-container .top .right a {
+    font-size: 1.1rem;
+    color: #0026ff;
+    font-weight: 600;
+}
+.comment-textbox textarea {
+    background-color: var(--color-audio-background);
+}
+.bottom {
+    padding-top: 1rem;
+}
+.bottom .send-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom .send-box .text {
+    color: var(--text-blur-color);
+}
+.bottom .send-box .button-send {
+    text-align: right;
+}
+.bottom .send-box .button-send a {
+    background-color: rgba(0, 163, 0, 0.733);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+.no-comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.no-comment > div > i {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+.no-comment > div {
+    color: var(--text-blur-color);
+}
+.user-comments{
+    margin-top: 1rem;
+}
+.user-comments .single-comment{
+    display: flex;
+    gap: 0.5rem;
+}
+.user-comments .single-comment .left {
+    width: 5%;
+}
+.user-comments .single-comment .left .avatar {
+    border-radius: 50%;
+    width: 3rem;
+}
+.user-comments .single-comment .right {
+    width: 92%;
+}
+.right > .info > .username{
+    font-weight: 600;
+}
+.right > .info > .date{
+    color: var(--text-blur-color);
+}
+.right > .content{
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.right > .like-reply > span{
+    cursor: pointer;
+}
+.right > .like-reply .count-like{
+    font-weight: bold;
+}
+.right .more-reply{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 0.6rem;
+}
+.right .more-reply .more-reply-expand{
+    cursor: pointer;
+    color: rgb(38, 73, 231);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.right .show-more-reply{
+    margin-top: 1.2rem;
+}
+.see-more-comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: rgb(38, 73, 231);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: underline;
+    padding-top: 3rem;
+}
+/* end comment */

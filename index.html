@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./assets/css/login1.css">
     <script src="assets/js/dungchung.js"></script>
 
+
     <title>Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhât 24h</title>
 </head>
 
@@ -29,6 +30,12 @@
         <header>
             <script>addHeader();</script>
         </header>
+        <nav>
+
+            <script>
+                addNav();
+            </script>
+        </nav>
         <main>
             <!-- hot article -->
             <div class="hot-article">
@@ -216,6 +223,7 @@
                     <div class="vertical-divider"></div>
                 </div>
                 <div class="right-article">
+                    <img width="100%" height="100%" src="img/869.png" alt="">
                 </div>
             </div>
             <!-- end of spotlight -->
@@ -290,6 +298,24 @@
                                 trật tự xây dựng nhưng không được phát hiện ra.</p>
                         </div>
                     </div>
+
+                    <div class="horizontal-divider"></div>
+                    <div class="more-article-left-item">
+                        <div class="image-section-more-article">
+                            <img src="https://icdn.dantri.com.vn/zoom/233_155/2022/11/03/z3851610395902b2c2851f16b63e135795521fe434bfbe-1667465811845.jpg"
+                                alt="">
+                        </div>
+                        <div class="title-section-more-article">
+                            <a href="#" class="sub-article-title">
+                                Sửa nhà trong ngõ thanh tra biết, cao ốc mặt đường vi phạm không phát hiện ra
+                            </a>
+                            <p class="text-blur-color">Đại biểu Quốc hội đoàn Bắc Kạn nêu, người dân sửa chữa nhà cửa
+                                tận
+                                trong ngõ sâu mà thanh tra xây dựng vẫn nắm được, trong khi nhiều công trình lớn vi phạm
+                                trật tự xây dựng nhưng không được phát hiện ra.</p>
+                        </div>
+                    </div>
+
                     <div class="horizontal-divider"></div>
                     <div class="more-article-left-item">
                         <div class="image-section-more-article">
@@ -306,6 +332,7 @@
                                 World Cup 2022 ở Qatar.</p>
                         </div>
                     </div>
+
                 </div>
                 <div class="more-article-right-side">
                     <div class="category-and-sub">
@@ -786,7 +813,7 @@
                             <ul>
                                 <li><a href="#">Thế giới tự nhiên</a></li>
                                 <li><a href="#">Vũ trụ</a></li>
-                                <li><a href="#">Khám phá</a></li>
+
                             </ul>
                         </div>
                         <div class="category-and-sub-item-container">
@@ -840,8 +867,10 @@
                         <div class="article-by-category">
                             <div class="main-category">TÂm điểm</div>
                             <ul>
-                                <li><a href="#"></a></li>
+                                <li><a href="#">Thế giới tự nhiên</a></li>
+                                <li><a href="#">Vũ trụ</a></li>
                             </ul>
+
                         </div>
                         <div class="category-and-sub-item-container">
                             <div class="category-item">
@@ -953,16 +982,23 @@
             <script>addFotter();</script>
         </footer>
         <!-- end footer -->
-        <!-- scroll to top -->
-
-        <!-- end scroll to top -->
-
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/dungchung.js"></script>
+    <script>
+        // Lấy tham chiếu đến phần tử <main>
+        var mainElement = document.querySelector('main');
+
+        if (mainElement) {
+            // Tìm tất cả các thẻ <a> bên trong <main>
+            var linksInMain = mainElement.querySelectorAll('a');
+
+            // Gán đường dẫn đến detail.html cho mỗi thẻ <a> trong <main>
+            linksInMain.forEach(function (link) {
+                link.setAttribute('href', 'detail.html');
+            });
+        }
+    </script>
 </body>
 
 </html>

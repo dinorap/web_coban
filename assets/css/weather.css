@@ -1,0 +1,162 @@
+.detail-container .title-weather {
+    display: flex;
+}
+
+.detail-container .title-weather .menu {
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+}
+
+.menu .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    cursor: pointer;
+}
+
+.menu .menu-pop {
+    display: none;
+    position: absolute;
+    top: 178px;
+    left: 600px;
+    width: 360px;
+    padding: 15px 15px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+}
+
+.menu:hover .menu-pop {
+    display: block;
+}
+
+.menu .menu-pop .point-wea {
+    margin-left: -89px;
+}
+
+
+.menu .menu-pop .menu-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1afaf;
+    height: 50px;
+}
+
+.menu .tinh li {
+    margin-left: -20px;
+    padding-left: 10px;
+    line-height: 35px;
+    width: 100%;
+}
+
+.menu .tinh li:hover {
+    background-color: #b1afaf;
+    border-radius: 5px;
+}
+
+.switch-toggle {
+    width: 50px;
+    height: 31px;
+    appearance: none;
+    background-color: #c92a57;
+    border-radius: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch-toggle::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    background-color: #ffff;
+    border-radius: 50%;
+    top: 2px;
+    left: 3px;
+    transition: 0.25s linear;
+}
+
+.switch-toggle:checked {
+    background-color: #0095E6;
+}
+
+.switch-toggle:checked:before {
+    left: 21px;
+}
+.mid-weather {
+    display: flex;
+    gap: 30px;
+}
+
+.mid-weather .left {
+    width: 55%;
+}
+
+.mid-weather .left .left-in {
+    border: 1px solid rgb(201, 201, 201);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.mid-weather .left .left-in img {
+    width: 99%;
+}
+
+.mid-weather .right {
+    width: 43%;
+}
+
+.mid-weather .right .right-in {
+    width: 100%;
+    border: 1px solid rgb(201, 201, 201);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.mid-weather .right .right-fo {
+    float: right;
+    margin-top: 10px;
+}
+
+main {
+    width: 1200px;
+    margin: auto;
+}
+
+.end-weather table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.end-weather th,
+td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.end-weather tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.news-weather {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.news-weather .news-weather-row img {
+    width: 100%;
+}
+
+.news-weather .news-weather-row a {
+    color: black;
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- common.css -->
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <!-- index.css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/login1.css">
+
+    <script src="assets/js/dungchung.js"></script>
+
+    <title>Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhât 24h</title>
+    <style>
+        .gia-vang-in table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid gainsboro;
+        }
+
+        .gia-vang-in tr {
+            border: 1px solid gainsboro;
+        }
+
+        .gia-vang-in th,
+        td {
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .gia-vang .gia-vang-in tr:hover {
+            background: #fbf0d6;
+        }
+
+        .gia-vang {
+            display: flex;
+            gap: 20px;
+        }
+
+        .gia-vang .gia-vang-in {
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        .gia-vang .gia-vang-in .header-vang {
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .gia-vang .gia-vang-in .img-vang img {
+            width: 100%;
+        }
+
+        .gia-vang .gia-vang-in .colorGreen {
+            color: green;
+        }
+
+        .gia-vang .gia-vang-in .colorRed {
+            color: red;
+        }
+
+        .header-vang .ma-vang {
+            width: 45%;
+            height: 38px;
+            padding: 0 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            background: none;
+            font-size: 14px;
+            color: #9e9e9e;
+            cursor: pointer;
+
+        }
+
+        .header-vang .date-vang {
+            width: 45%;
+            height: 38px;
+            padding: 0 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            background: none;
+            font-size: 14px;
+            color: #9e9e9e;
+            cursor: pointer;
+        }
+
+        .ngoai-te {
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .ngoai-te table {
+            background-color: #F5F8FF;
+            border: none;
+            border-collapse: collapse;
+
+        }
+
+        .ngoai-te table tr td {
+            border: 1px solid #CEDAF2;
+        }
+
+        .ngoai-te table tr td {
+            border: 1px solid #CEDAF2;
+        }
+
+        .ngoai-te table .ck-name {
+
+            display: flex;
+            padding-left: 70px;
+            gap: 7px;
+        }
+
+        .tin-khac {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <script>addHeader();</script>
+        </header>
+        <nav>
+            <script>addNav();</script>
+        </nav>
+        <main>
+            <h2 style="color: #e2af2e; margin-bottom: 10px;">GIÁ VÀNG</h2>
+            <div class="gia-vang">
+                <div class="gia-vang-in">
+                    <div class="header-vang" style="margin-bottom: 10px;">
+                        <select name="" id="" class="ma-vang">
+                            <option value="">Tìm mã vàng nhanh</option>
+                            <option value="sjc_tp_hcm">SJC TP HCM</option>
+                            <option value="sjc_hn">SJC Hà Nội</option>
+                            <option value="sjc_dn">SJC Đà Nẵng</option>
+                            <option value="doji_hn">DOJI HN</option>
+                            <option value="doji_sg">DOJI SG</option>
+                            <option value="phu_quy_sjc">Phú Qúy SJC</option>
+                            <option value="viettinbank_gold">VIETINBANK GOLD</option>
+                            <option value="pnj_tp_hcml">PNJ TP.HCM</option>
+                            <option value="pnj_hn">PNJ Hà Nội</option>
+                            <option value="eximbank">EXIMBANK</option>
+                            <option value="bao_tin_minh_chau">BẢO TÍN MINH CHÂU</option>
+                        </select>
+                        <input type="date" class="date-vang" name="birthdate">
+                    </div>
+                    <table>
+                        <tr style="background-color: rgb(208, 208, 208);">
+                            <th></th>
+                            <th colspan="2">Hôm nay (19/10/2023)</th>
+                            <th colspan="2">Hôm qua (18/10/2023)</th>
+                        </tr>
+                        <tr style="background-color: aliceblue">
+                            <th></th>
+                            <th>Giá mua</th>
+                            <th>Giá bán</th>
+                            <th>Giá mua</th>
+                            <th>Giá bán</th>
+                        </tr>
+                        <tr>
+                            <td>DOJI HN</td>
+                            <td><span>69,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">100</span>
+                            </td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>DOJI SG</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>PHÚ QÚY SJC</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,550</td>
+                            <td>69,550</td>
+                            <td>69,550</td>
+                        </tr>
+                        <tr style=" background: #fbf0d6;">
+                            <td>SJC HÀ NỘI</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_down2019.png">
+                                <span class="colorRed">50</span>
+                            </td>
+                            <td><span>68,250</span>
+                                <img src="img/btn_down2019.png">
+                                <span class="colorRed">50</span>
+                            </td>
+                            <td><span>68,750</span>
+                                <img src="img/btn_down2019.png">
+                                <span class="colorRed">50</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DOJI SG</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>DOJI SG</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>VIETINBANK GOLD</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>SJC ĐÀ NẴNG</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                        <tr>
+                            <td>DOJI SG</td>
+                            <td>69,350</td>
+                            <td>69,350</td>
+                            <td><span>68,050</span>
+                                <img src="img/btn_up2019.png">
+                                <span class="colorGreen">50</span>
+                            </td>
+                            <td>69,350</td>
+                        </tr>
+                    </table>
+                    <div class="header-vang">
+                        <p><em>Đơn vị: nghìn đồng/lượng</em></p>
+                        <p><em><img src="img/btn_up2019.png"><img src="img/btn_down2019.png">Tăng giảm so sánh với ngày
+                                trước đó</em></p>
+                    </div>
+                </div>
+                <div class="gia-vang-in">
+                    <div class="header-vang" style="margin-top: -24px; margin-bottom: 1px;">
+                        <h2>Biểu đồ giá vàng 30 ngày gần nhất</h2>
+                        <p>SJC HÀ NỘI</p>
+                    </div>
+                    <div class="img-vang">
+                        <img src="img/ig5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <hr color="antiquewhite" width="90%">
+            <h2 style="color: #2e79e2; margin-bottom: 0px;">NGOẠI TỆ</h2>
+            <div class="ngoai-te">
+                <h2 style="color: #000000; margin-bottom: 10px; text-align: center;">Bảng quy đổi ngoại tệ -> VND</h2>
+                <table style="width: 100%;">
+                    <tr class="ck-head">
+                        <td style="width: 430px; display:flex ;justify-content: space-between;align-items: center;">
+                            <b>TỶ GIÁ NGOẠI TỆ</b>
+                            <a href=""><img src="img/eximbank.svg" alt=""></a>
+                        </td>
+                        <td style="width: 300px; font-size: 12px; "><b>Tên Ngoại tệ</b></td>
+                        <td style="width: 200px; font-size: 12px; "><b>Mua Tiền mặt</b></td>
+                        <td style="width: 200px; font-size: 12px; "><b>Mua chuyển khoản</b></td>
+                        <td style="width: 200px; font-size: 12px; "><b>Bán</b></td>
+                    </tr>
+                    <tr>
+                        <td>USD/VND </td>
+                        <td class="ck-name"><img src="img/usd.svg" alt="">US DOLLAR</td>
+                        <td>23.500</td>
+                        <td>23.580</td>
+                        <td>23.980</td>
+                    </tr>
+                    <tr>
+                        <td>EUR/VND </td>
+                        <td class="ck-name">
+                            <img src="img/eur.svg" alt="">EURO
+                        </td>
+                        <td>26.675</td>
+                        <td>25.752</td>
+                        <td>26.381</td>
+                    </tr>
+                    <tr>
+                        <td>GBP/VND </td>
+                        <td class="ck-name"><img src="img/gbp.svg" alt="">POUND STERLING</td>
+                        <td>28.977.35</td>
+                        <td>29.270.05</td>
+                        <td>30.210.73</td>
+                    </tr>
+                    <tr>
+                        <td>JPY/VND </td>
+                        <td class="ck-name">
+                            <img src="img/yen.svg" alt="">YEN
+                        </td>
+                        <td>26.675</td>
+                        <td>25.752</td>
+                        <td>26.381</td>
+                    </tr>
+                    <tr>
+                        <td>AUD/VND </td>
+                        <td class="ck-name"><img src="img/aud.svg" alt="">AUSTRALIAN DOLLAR</td>
+                        <td>23.500</td>
+                        <td>23.580</td>
+                        <td>23.980</td>
+                    </tr>
+                    <tr>
+                        <td>SGD/VND </td>
+                        <td class="ck-name">
+                            <img src="img/sgd.svg" alt="">SINGAPORE DOLLAR
+                        </td>
+                        <td>26.675</td>
+                        <td>25.752</td>
+                        <td>26.381</td>
+                    </tr>
+                    <tr>
+                        <td>USD/VND </td>
+                        <td class="ck-name"><img src="img/usd.svg" alt="">US DOLLAR</td>
+                        <td>23.500</td>
+                        <td>23.580</td>
+                        <td>23.980</td>
+                    </tr>
+                    <tr>
+                        <td>EUR/VND </td>
+                        <td class="ck-name">
+                            <img src="img/eur.svg" alt="">EURO
+                        </td>
+                        <td>26.675</td>
+                        <td>25.752</td>
+                        <td>26.381</td>
+                    </tr>
+                    <tr>
+                        <td>USD/VND </td>
+                        <td class="ck-name"><img src="img/usd.svg" alt="">US DOLLAR</td>
+                        <td>23.500</td>
+                        <td>23.580</td>
+                        <td>23.980</td>
+                    </tr>
+                    <tr>
+                        <td>EUR/VND </td>
+                        <td class="ck-name">
+                            <img src="img/eur.svg" alt="">EURO
+                        </td>
+                        <td>26.675</td>
+                        <td>25.752</td>
+                        <td>26.381</td>
+                    </tr>
+                </table>
+            </div>
+            <h2 style="color: #ff0000; margin-bottom: 0px;">TIN LIÊN QUAN</h2>
+            <div class="tin-khac">
+                <div class="tin-khac-in"></div>
+                <div class="tin-khac-in"></div>
+            </div>
+        </main>
+        <footer class="footer">
+            <script>addFotter();</script>
+        </footer>
+</body>
+
+</html>

@@ -274,3 +274,33 @@
     background-color: #f33;
     border-radius: 50%;
 }
+.member {
+    position: relative;
+    float: left;
+    display: table-cell;
+}
+.member:hover > .menuMember{
+    z-index: 20;
+    transform: translateX(-40%) scale(1);
+}
+.member .menuMember {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #eee;
+    min-width: 170px;
+    transition-duration: .15s;
+    transform: translateX(-40%) scale(0);
+}
+.member .menuMember a {
+    display: block;
+    padding: 10px 0;
+}
+.member .menuMember a:hover {
+    background-color: #888;
+    color: #eee;
+}
+.member .hide {
+    display: none;
+}

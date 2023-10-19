@@ -84,7 +84,7 @@
 }
 .login a {
     color: var(--text-blur-color);
-    font-size: 1.1rem;
+    
 }
 
 .search {
@@ -93,7 +93,10 @@
     cursor: pointer;
 }
 /* end header */
-
+nav{
+    position: sticky;
+    top: 0;
+}
 /* category */
 .category-header-container {
     position: sticky;
@@ -210,13 +213,17 @@
 
 .up-arrow {
     position: absolute;
+    top: -15px;
     left: 5%;
-    top: -10px;
-    color: var(--color-background-popup);
+    color: rgb(242, 235, 235);
+}
+.up-arrow i {
+    font-size: 25px; /* Điều chỉnh kích thước của icon theo nhu cầu */
 }
 
 .list-category-popup li {
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-left: -37px;
     border-bottom: 1px solid var(--border-color-blur);
     color: var(--text-blur-color);
     cursor: pointer;
@@ -264,6 +271,7 @@
 
 .right-article {
     width: 30%;
+    height: 650px;
 }
 .title-section {
     width: 60%;

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- common.css -->
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <!-- index.css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/login1.css">
+    <link rel="stylesheet" href="./assets/css/weather.css">
+    <script src="assets/js/dungchung.js"></script>
+
+    <title>Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhât 24h</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <script>addHeader();</script>
+        </header>
+        <nav>
+            <script>addNav();</script>
+        </nav>
+        <main>
+            <div class="detail-container">
+                <div class="title-weather">
+                    <h1 style="font-size: 22px;  margin: 0; ">Thời tiết :</h1>
+                    <span style="font-size: 22px; font-weight: 400;margin-left: 10px; margin-right: 10px;">Hà Nội</span>
+                    <div class="menu">
+                        <span class="icon"><i class="arrow-scroll-top fa-solid fa-angle-down"></i></span>
+                        <div class="menu-pop">
+                            <div class="menu-header">
+                                <i style="font-size: 30px;margin-top: 7px;" class="fa-solid fa-location-dot"></i>
+                                <div class="point-wea">
+                                    <div>
+                                        <b>Tự động xác định vị trí</b>
+                                        <div class="note-location">Vị trí hiện tại: <span>Hà Nội</span></div>
+                                    </div>
+                                </div>
+                                <div class="btn-on-off">
+                                    <input type="checkbox" class="switch-toggle" id="">
+                                </div>
+                            </div>
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" style="width: 90%; height: 30px; border-radius: 5px;margin-left:5px;"
+                                    placeholder="  Tìm địa điểm">
+                            </div>
+                            <div class="tinh">
+                                <ul>
+                                    <li>Hà Nội</li>
+                                    <li>Thành Phố Hồ Chí Minh</li>
+                                    <li>Phú Thọ</li>
+                                    <li>Hà Giang</li>
+                                    <li>Thái Bình</li>
+                                    <li>Lạng Sơn </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="black">
+                <div class="mid-weather">
+                    <div class="left">
+                        <div class="left-in">
+                            <img src="img/ig1.jpg" alt="">
+                        </div>
+                        <div class="left-in">
+                            <img src="img/ig2.jpg" alt="">
+                        </div>
+                        <div class="left-in">
+                            <img src="img/ig3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right-in">
+                            <img src="img/ig4.jpg" alt="">
+                        </div>
+                        <div class="right-fo">
+                            Nguồn: <i>weather.com</i>
+                        </div>
+                    </div>
+                </div>
+
+                <hr color="antiquewhite" style="margin-top: 30px;">
+                <div class="end-weather">
+                    <h2 style="text-align: center;">Bảng thời tiết các ngày trong tuần </h2>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Temperature (°C)</th>
+                            <th>Humidity (%)</th>
+                            <th>UV</th>
+                            <th>Wind Speed (km/h)</th>
+                            <th>Wind Direction (°)</th>
+                            <th>Rainfall (mm)</th>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>06:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>497</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>18:00:00</td>
+                            <td>25</td>
+                            <td>97</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>54</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>06:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>497</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>18:00:00</td>
+                            <td>25</td>
+                            <td>97</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>54</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>06:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>497</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>18:00:00</td>
+                            <td>25</td>
+                            <td>97</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>54</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>06:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>497</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>18:00:00</td>
+                            <td>25</td>
+                            <td>97</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>54</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>06:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>497</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>22/10/2023</td>
+                            <td>18:00:00</td>
+                            <td>25</td>
+                            <td>97</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>54</td>
+                            <td>0</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <hr color="antiquewhite" style="margin-top: 30px;">
+                <div style="border-left: 5px solid red; padding-left: 10px;">
+                    <h2>Thời tiết</h2>
+                </div>
+                <div class="news-weather">
+                    <div class="news-weather-row">
+                        <img src="image/1.jpg" alt="">
+                        <a href="">
+                            <h3>Khởi tố chủ tịch Tập đoàn Mường Thanh Lê Thanh Thản</h3>
+                        </a>
+                        <p>TTO - Ông Lê Thanh Thản, chủ tịch Tập đoàn
+                            Mường Thanh, bị khởi tố, điều
+                            tra...</p>
+                        <span> 4 Giờ trước</span>
+                    </div>
+                    <div class="news-weather-row">
+                        <img src="image/1.jpg" alt="">
+                        <a href="">
+                            <h3>Khởi tố chủ tịch Tập đoàn Mường Thanh Lê Thanh Thản</h3>
+                        </a>
+                        <p>TTO - Ông Lê Thanh Thản, chủ tịch Tập đoàn
+                            Mường Thanh, bị khởi tố, điều
+                            tra...</p>
+                        <span> 4 Giờ trước</span>
+                    </div>
+                    <div class="news-weather-row">
+                        <img src="image/1.jpg" alt="">
+                        <a href="">
+                            <h3>Khởi tố chủ tịch Tập đoàn Mường Thanh Lê Thanh Thản</h3>
+                        </a>
+                        <p>TTO - Ông Lê Thanh Thản, chủ tịch Tập đoàn
+                            Mường Thanh, bị khởi tố, điều
+                            tra...</p>
+                        <span> 4 Giờ trước</span>
+                    </div>
+                    <div class="news-weather-row">
+                        <img src="image/1.jpg" alt="">
+                        <a href="">
+                            <h3>Khởi tố chủ tịch Tập đoàn Mường Thanh Lê Thanh Thản</h3>
+                        </a>
+                        <p>TTO - Ông Lê Thanh Thản, chủ tịch Tập đoàn
+                            Mường Thanh, bị khởi tố, điều
+                            tra...</p>
+                        <span> 4 Giờ trước</span>
+                    </div>
+                    <div class="news-weather-row">
+                        <img src="image/1.jpg" alt="">
+                        <a href="">
+                            <h3>Khởi tố chủ tịch Tập đoàn Mường Thanh Lê Thanh Thản</h3>
+                        </a>
+                        <p>TTO - Ông Lê Thanh Thản, chủ tịch Tập đoàn
+                            Mường Thanh, bị khởi tố, điều
+                            tra...</p>
+                        <span> 4 Giờ trước</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer">
+            <script>addFotter();</script>
+        </footer>
+</body>
+
+</html>

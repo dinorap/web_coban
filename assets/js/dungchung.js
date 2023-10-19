@@ -1,7 +1,15 @@
 function addTK() {
   document.write(`  
-  <a id="loginButton"><span>Đăng nhập</span><i class="fa-regular fa-user"
-                            style="margin-left: 4px;"></i></a>
+  <div class="member" id="loginButton" onmouseover="showUserMenu()" onmouseout="hideUserMenu()">
+    <a>
+        <i class="fa fa-user"></i>
+        <span id="userText">Đăng nhập</span>
+    </a>
+    <div class="menuMember hide" id="userMenu">
+        <a href="nguoidung.html">Trang người dùng</a>
+        <a onclick="if (window.confirm('Xác nhận đăng xuất ?')) logOut();">Đăng xuất</a>
+    </div>
+</div>
   
     <div class="modaljs" id="modal" ">
         <span class="close" id=closeModal>&#10006;</span>
@@ -127,6 +135,7 @@ function addTK() {
         </div>
     </div>
   `);
+
   const forgetModal = document.getElementById("qmk");
   const forgetButtonback = document.getElementById("back");
   const forgetButton = document.getElementById("qmkbutton");
@@ -138,8 +147,10 @@ function addTK() {
   const signupButton = document.getElementById("snow");
   const close = document.getElementById("closeModal");
   loginButton.addEventListener("click", () => {
-    loginModal.style.display = "block";
-    modal.style.display = "block";
+    if (isLoggedIn === "false") {
+      loginModal.style.display = "block";
+      modal.style.display = "block";
+    }
   });
   signinButton.addEventListener("click", () => {
     signupModal.style.display = "none";
@@ -161,6 +172,13 @@ function addTK() {
     forgetModal.style.display = "none";
   });
 }
+if (localStorage.getItem("isLoggedIn") === null) {
+  // Nếu không tồn tại, thì đặt giá trị "false" cho biến "isLoggedIn"
+  localStorage.setItem("isLoggedIn", "false");
+}
+
+var isLoggedIn = localStorage.getItem("isLoggedIn");
+
 function getListUser() {
   var data = JSON.parse(window.localStorage.getItem("ListUser")) || [];
   var l = [];
@@ -188,31 +206,81 @@ function sha256(input) {
     return hashHex;
   });
 }
+
 function logIn(form) {
   // Lấy dữ liệu từ form
   var name = form.username.value;
   var pass = form.pass.value;
-
   // Mã hóa mật khẩu đăng nhập
   sha256(pass).then(function (hashedPass) {
     // Lấy dữ liệu từ danh sách người dùng local storage
     var listUser = getListUser();
-
     var userMatch = listUser.find(function (u) {
       return u.username === name && u.pass === hashedPass;
     });
 
     if (userMatch) {
-      window.location.href = "index.html";
+      var mail = userMatch.email;
+      alert("Chào mừng " + name + " đăng nhập thành công");
+      isLoggedIn = true; // Đánh dấu người dùng đã đăng nhập thành công
+      modal.style.display = "none";
+      saveLoginStatus(name, mail, pass);
+      location.reload();
     } else {
-      // Trả về thông báo nếu không khớp
       alert("Nhập sai tên hoặc mật khẩu !!!");
-      form.username.focus();
+      return false;
     }
   });
-
   return false;
 }
+document.addEventListener("DOMContentLoaded", function () {
+  checkLoginStatus();
+});
+function showUserMenu() {
+  var userMenu = document.querySelector(".menuMember");
+
+  if (isLoggedIn === "true") {
+    userMenu.classList.remove("hide");
+  }
+}
+
+function hideUserMenu() {
+  var userMenu = document.querySelector(".menuMember");
+
+  if (isLoggedIn === "true") {
+    userMenu.classList.add("hide");
+  }
+}
+
+function checkLoginStatus() {
+  var userText = document.getElementById("userText");
+  var isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (isLoggedIn === "true") {
+    // Nếu đã đăng nhập, hiển thị tên người dùng và cập nhật trạng thái
+    var username = localStorage.getItem("username");
+    userText.textContent = username;
+    isLoggedIn = true; // Cập nhật trạng thái đăng nhập
+  }
+}
+
+// Hàm lưu trạng thái đăng nhập vào Local Storage
+function saveLoginStatus(username, email, pass) {
+  localStorage.setItem("isLoggedIn", true);
+  localStorage.setItem("username", username);
+  localStorage.setItem("emailcur", email);
+  localStorage.setItem("passcur", pass);
+}
+
+// Hàm đăng xuất và xóa trạng thái đăng nhập khỏi Local Storage
+function logOut() {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("username");
+  localStorage.removeItem("emailcur");
+  localStorage.removeItem("passcur");
+  localStorage.setItem("isLoggedIn", false);
+  window.location.href = "index.html";
+}
+
 function forget(form) {
   const forgetModal = document.getElementById("qmk");
   const signupModal = document.getElementById("signup");
@@ -303,7 +371,10 @@ function addHeader() {
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-        </div>
+        </div>`);
+}
+function addNav() {
+  document.write(`
         <div class="category-header-container">
             <div class="header-category">
                 <ul class="list-category">
@@ -339,8 +410,28 @@ function addHeader() {
                                     Ukraine</li>
                         </div>
                     </li>
-                    <li class="category-item"><a href="#">Xã hội</a></li>
-                    <li class="category-item"><a href="#">Thế giới</a></li>
+                    <li class="category-item"><a href="#">Xã hội</a>
+                    <div class="category-popup">
+                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
+                            <ul class="list-category-popup">
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga -
+                                    Ukraine</li>
+                        </div></li>
+                    <li class="category-item"><a href="bieudo.html">Kinh tế</a>
+                    <div class="category-popup">
+                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
+                            <ul class="list-category-popup">
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga -
+                                    Ukraine</li>
+                        </div></li></li>
                     <li class="category-item"><a href="#">Kinh doanh</a></li>
                     <li class="category-item"><a href="#">Bất động sản</a></li>
                     <li class="category-item"><a href="#">Thể thao</a></li>
@@ -355,7 +446,9 @@ function addHeader() {
                     <li class="category-item"><a href="#">Giải trí</a></li>
                     <li class="category-item"><a href="#">Giải trí</a></li>
                     <li class="category-item"><a href="#">Giải trí</a></li>
-                    <li class="three-dots">• • •</li>
+                    <li class="category-item"><a href="#">Giải trí</a></li>
+                    <li class="category-item"><a href="#">Giải  </a></li>
+                    <li class="three-dots" style="font-size: 15px;">&#160;&#9776;&#160;&#160;</li>
                     <li class="btn-close-category" style="display: none;"><i style="font-size: 1.4rem; color: #0f6c32;"
                             class="fa-regular fa-circle-xmark"></i></li>
                 </ul>
@@ -617,7 +710,45 @@ function addHeader() {
         </div>
     </div>
   `);
+  var threeDots = document.querySelector(".three-dots");
+  threeDots.addEventListener("click", function () {
+    var allCategory = document.querySelector(".all-category");
+    var categoryHeaderContainer = document.querySelector(
+      ".category-header-container"
+    );
+    if (
+      allCategory.style.display === "none" ||
+      allCategory.style.display === ""
+    ) {
+      allCategory.style.display = "";
+      categoryHeaderContainer.style.backgroundColor = "#eee";
+      btnCloseCategory.style.display = "block";
+      threeDots.style.display = "none";
+    } else {
+      allCategory.style.display = "none";
+      categoryHeaderContainer.style.backgroundColor = "#fff";
+      btnCloseCategory.style.display = "none";
+      threeDots.style.display = "block";
+    }
+  });
+
+  // Click event for the btn-close-category element
+  var btnCloseCategory = document.querySelector(".btn-close-category");
+  btnCloseCategory.addEventListener("click", function () {
+    btnCloseCategory.style.display = "none";
+    var allCategory = document.querySelector(".all-category");
+    allCategory.style.display = "none";
+    var threeDots = document.querySelector(".three-dots");
+    threeDots.style.display = "block";
+    var categoryHeaderContainer = document.querySelector(
+      ".category-header-container"
+    );
+    categoryHeaderContainer.style.backgroundColor = "#fff";
+  });
+
+  // Scroll to top button
 }
+
 function addFotter() {
   document.write(`
   <div class="horizontal-footer-divider"></div>
@@ -661,46 +792,27 @@ function addFotter() {
                 </div>
             </div>
             <div class="footer-end">
-                © 2005-2022 Bản quyền thuộc về Báo điện tử tin tức 24h. Cấm sao chép dưới mọi hình thức nếu không có sự cho phép.
+                © 2022-2023 Bản quyền thuộc về Báo điện tử tin tức 24h. Cấm sao chép dưới mọi hình thức nếu không có sự cho phép.
             </div>
             <div class="scroll-top">
             <i class="arrow-scroll-top fa-solid fa-angle-up"></i>
         </div>
   `);
-}
-$(document).ready(function () {
-  // show category by three dots
-  $(".three-dots").on("click", function () {
-    $(".all-category").toggle();
-    if ($(".all-category").is(":visible")) {
-      $(".category-header-container").css({ backgroundColor: "#eee" });
-      $(".btn-close-category").show();
-      $(".three-dots").hide();
-    } else {
-      $(".category-header-container").css({ backgroundColor: "#fff" });
-      $(".btn-close-category").hide();
-    }
-  });
-
-  $(".btn-close-category").on("click", function () {
-    $(".btn-close-category").hide();
-    $(".all-category").hide();
-    $(".three-dots").show();
-    $(".category-header-container").css({ backgroundColor: "#fff" });
-  });
-  // end show category by three dots
-
-  // scroll to top button
-  $(".scroll-top").on("click", function () {
+  var scrollTopButton = document.querySelector(".scroll-top");
+  scrollTopButton.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-  $(window).on("scroll", function () {
-    let scroll = this.scrollY;
+
+  // Scroll event to show/hide the scroll-top button
+  window.addEventListener("scroll", function () {
+    var scroll = this.scrollY;
     if (scroll !== 0) {
-      $(".scroll-top").css({ display: "flex" });
+      scrollTopButton.style.display = "flex";
     } else {
-      $(".scroll-top").css({ display: "none" });
+      scrollTopButton.style.display = "none";
     }
   });
-  // end scroll to top button
-});
+}
+// Click event for the three-dots element
+
+// end scroll to top button

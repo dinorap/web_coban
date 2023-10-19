@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- common.css -->
+    <link rel="stylesheet" href="./assets/css/common.css">
+
+    <!-- index.css -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <link rel="stylesheet" href="./assets/css/login1.css">
+    <script src="assets/js/dungchung.js"></script>
+
+    <title>Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhât 24h</title>
+    <style>
+        .infor {
+            display: flex;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        }
+
+        .infor .infor-left {
+            position: sticky;
+            top: 67px;
+            left: 0;
+            width: 300px;
+            height: 350px;
+            border: 1px solid rgb(173, 169, 169);
+            border-radius: 5px;
+            margin-right: 70px;
+            margin-left: 100px;
+            background-color: rgb(244, 244, 244);
+        }
+
+        .infor .infor-left ul {
+            text-decoration: none;
+        }
+
+        .infor .infor-left li {
+
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+            padding: 15px;
+            margin-left: -20px;
+            margin-right: 20px;
+        }
+
+        .infor .infor-left li i {
+            color: gray;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .infor .infor-left li:first-child {
+            font-weight: 500;
+            line-height: 17px;
+            background: #999494;
+            border-radius: 4px;
+
+        }
+
+        .infor .infor-right {
+            position: relative;
+            width: 55%;
+            background-color: rgb(244, 244, 244);
+            border: 1px solid rgb(173, 169, 169);
+            border-radius: 5px;
+        }
+
+        .infor .infor-right h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .infor .infor-right .form-group {
+            margin-bottom: 15px;
+            margin-left: 15px;
+        }
+
+        .infor .infor-right .form-button {
+            margin-bottom: 15px;
+            margin-right: 20px;
+            float: right;
+        }
+
+        .infor .infor-right .form-button input {
+            width: 70px;
+            height: 30px;
+            color: aliceblue;
+            border-radius: 5px;
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(232, 49, 49);
+        }
+
+        .infor .infor-right .form-button input:nth-child(1) {
+            background-color: rgb(49, 232, 49);
+        }
+
+        .infor .infor-right .form-group-sex {
+            display: flex;
+        }
+
+        .infor .infor-right .form-group-chung {
+            display: flex;
+            gap: 200px;
+        }
+
+        .infor .infor-right label {
+            display: block;
+            margin-bottom: 5px;
+
+        }
+
+        .infor .infor-right label i {
+            color: gray;
+
+        }
+
+        .infor .infor-right input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .file-upload {
+            display: none;
+        }
+
+        .edit-button {
+            background-color: #00ff44;
+            color: #000000;
+            border: none;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-top: 70px;
+            margin-left: -22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <script>addHeader();</script>
+        </header>
+        <nav>
+            <script>addNav();</script>
+        </nav>
+        <main>
+            <div class="detail-container">
+                <div class="infor">
+                    <div class="infor-left">
+                        <ul>
+                            <li><i class="fas fa-user"></i> Thông tin tài khoản</li>
+                            <li><i class="fas fa-save"></i> Tin đã lưu</li>
+                            <li><i class="fas fa-eye"></i> Tin đã xem</li>
+                            <li><i class="fas fa-comments"></i> Hoạt động bình luận</li>
+                            <li><i class="fas fa-sign-out-alt"></i> <a
+                                    onclick="if (window.confirm('Xác nhận đăng xuất ?')) logOut();">Đăng xuất</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="infor-right">
+                        <h1>Thông tin tài khoản</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="avatar"> Ảnh đại diện</label>
+                                <div class="form-group-sex">
+                                    <div class="avatar">
+                                        <img id="avatar-img" src="img/logo.png" alt="Avatar">
+                                    </div>
+                                    <label class="edit-button" for="avatar-upload">
+                                        <i class="fas fa-pencil-alt" style="color:white; font-size: 12px;"></i>
+                                        <input class="file-upload" type="file" id="avatar-upload" accept="image/*"
+                                            onchange="updateAvatar()">
+                                    </label>
+                                </div>
+                            </div>
+                            <script>
+                                function updateAvatar() {
+                                    const avatarImg = document.getElementById("avatar-img");
+                                    const fileInput = document.getElementById("avatar-upload");
+                                    const file = fileInput.files[0];
+
+                                    if (file) {
+                                        const reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            avatarImg.src = e.target.result;
+                                        };
+                                        reader.readAsDataURL(file);
+                                    }
+                                }
+
+                            </script>
+                            <div class="form-group">
+                                <label for="username"><i class="fas fa-user"></i> Tên tài khoản:</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="fas fa-lock"></i> Mật khẩu:</label>
+                                <input type="password" id="c" name="password" required>
+                            </div>
+                            <div class="form-group-chung">
+                                <div class="form-group">
+                                    <label for="birthdate"><i class="fas fa-calendar-alt"></i> Ngày sinh:</label>
+                                    <input type="date" id="birthdate" name="birthdate" required style="width: 150px;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="margin-top: 1px;"><i class="fas fa-venus-mars"></i> Giới
+                                        tính:</label>
+                                    <div class="form-group-sex" style="margin-top: 6px">
+                                        <div class="form-group-sex" style="margin-right: 35px">
+                                            <input style="margin-bottom: 5px" type="radio" id="male" name="gender"
+                                                value="nam">
+                                            <label for="male">Nam</label>
+                                        </div>
+                                        <div class="form-group-sex">
+                                            <input style="margin-bottom: 5px" type="radio" id="female" name="gender"
+                                                value="nu">
+                                            <label>Nữ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" form-group">
+                                <label for="address"><i class="fas fa-map-marker-alt"></i> Địa chỉ:</label>
+                                <textarea id="address" name="address" rows="4" required></textarea>
+                            </div>
+                            <div class="form-button">
+                                <input type="submit" value="Lưu lại">
+                                <input type="submit" value="Hủy">
+                            </div>
+                        </form>
+                    </div>
+        </main>
+        <script>
+            const username = localStorage.getItem("username");
+            const email = localStorage.getItem("emailcur");
+            const pass = localStorage.getItem("passcur");
+            console.log(username)
+            console.log(email)
+            console.log(pass)
+            // Gán giá trị cho các trường input
+            document.getElementById("username").value = username;
+            document.getElementById("email").value = email;
+            document.getElementById("c").value = pass;
+        </script>
+        <footer class="footer">
+            <script>addFotter();</script>
+        </footer>
+</body>
+
+</html>

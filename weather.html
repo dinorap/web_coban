@@ -20,6 +20,15 @@
     <script src="assets/js/dungchung.js"></script>
 
     <title>Tin tức Việt Nam và quốc tế nóng, nhanh, cập nhât 24h</title>
+    <style>
+        .icon-header a i {
+            margin-left: 8px;
+            font-size: 18px;
+            background-color: #efefef;
+            padding: 8px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +43,8 @@
             <div class="detail-container">
                 <div class="title-weather">
                     <h1 style="font-size: 22px;  margin: 0; ">Thời tiết :</h1>
-                    <span style="font-size: 22px; font-weight: 400;margin-left: 10px; margin-right: 10px;">Hà Nội</span>
+                    <span style="font-size: 22px; font-weight: 400;margin-left: 10px; margin-right: 10px;">Hà
+                        Nội</span>
                     <div class="menu">
                         <span class="icon"><i class="arrow-scroll-top fa-solid fa-angle-down"></i></span>
                         <div class="menu-pop">
@@ -67,6 +77,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="icon-header" style="margin-left:860px; ">
+                        <a href=""><i class="fa-brands fa-facebook" style="color: black;"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter" style="color: black;"></i></a>
+                    </div>
                 </div>
                 <hr color="black">
                 <div class="mid-weather">
@@ -90,8 +104,39 @@
                         </div>
                     </div>
                 </div>
-
                 <hr color="antiquewhite" style="margin-top: 30px;">
+                <div class="article-preview-content">
+                    <h2 style="text-align: center;">Bảng lượng mưa thành phố hà nội trong năm</h2>
+                    <div style="width: 100%;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                    <script>
+                        const limit = document.getElementById('myChart');
+
+                        new Chart(limit, {
+                            type: 'bar',
+                            data: {
+                                labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12'],
+                                datasets: [{
+                                    label: 'Lượng mưa Hà Nội (21°B)',
+                                    data: [25, 50, 45, 55, 200, 300, 450, 220, 117, 43, 37, 28],
+                                    borderWidth: 2
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                    <hr color="antiquewhite" style="margin-top: 30px;">
+                </div>
                 <div class="end-weather">
                     <h2 style="text-align: center;">Bảng thời tiết các ngày trong tuần </h2>
                     <table>
@@ -264,6 +309,51 @@
                         <span> 4 Giờ trước</span>
                     </div>
                 </div>
+                <hr color="antiquewhite" style="margin-top: 30px;">
+                <div class="related-articles-container" style="width: 70%;">
+                    <div class="related-articles">
+                        <h3>Tin liên quan</h3>
+                        <div class="articles-container">
+                            <div class="more-article-left-item">
+                                <div class="image-section-more-article w-20">
+                                    <img src="https://admin.thoitiet24h.vn/images/1697625733.png" alt="">
+                                </div>
+                                <div class="title-section-more-article w-80">
+                                    <a href="#" class="sub-article-title">
+                                        Dự báo thời tiết 19/10 và 3 ngày tới: miền Bắc sắp có mưa lớn, miền Trung
+                                    </a>
+                                    <p class="text-blur-color">Dự báo thời tiết 19/10 và 3 ngày tới: miền Bắc sắp có mưa
+                                        lớn, miền Trung có mưa lớn nhưng tổng lượng mưa giảm c</p>
+                                </div>
+                            </div>
+                            <div class="more-article-left-item">
+                                <div class="image-section-more-article w-20">
+                                    <img src="https://admin.thoitiet24h.vn/images/1697625733.png" alt="">
+                                </div>
+                                <div class="title-section-more-article w-80">
+                                    <a href="#" class="sub-article-title">
+                                        Dự báo thời tiết 19/10 và 3 ngày tới: miền Bắc sắp có mưa lớn, miền Trung
+                                    </a>
+                                    <p class="text-blur-color">Dự báo thời tiết 19/10 và 3 ngày tới:
+                                        miền Bắc sắp có mưa lớn, miền Trung có mưa lớn nhưng tổng lượng mưa giảm c.</p>
+                                </div>
+                            </div>
+                            <div class="more-article-left-item">
+                                <div class="image-section-more-article w-20">
+                                    <img src="https://admin.thoitiet24h.vn/images/1697625733.png" alt="">
+                                </div>
+                                <div class="title-section-more-article w-80">
+                                    <a href="#" class="sub-article-title">
+                                        Dự báo thời tiết 19/10 và 3 ngày tới: miền Bắc sắp có mưa lớn, miền Trung
+                                    </a>
+                                    <p class="text-blur-color">Dự báo thời tiết 19/10 và 3 ngày tới:
+                                        miền Bắc sắp có mưa lớn, miền Trung có mưa lớn nhưng tổng lượng mưa giảm c</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </main>

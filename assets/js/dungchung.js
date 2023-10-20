@@ -710,6 +710,14 @@ function addNav() {
         </div>
     </div>
   `);
+  const links = document.querySelectorAll(".group-category-sub-category a");
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault(); // Ngăn chặn hành động mặc định khi bấm vào thẻ a
+      window.location.href = "detail2.html";
+    });
+  });
   var threeDots = document.querySelector(".three-dots");
   threeDots.addEventListener("click", function () {
     var allCategory = document.querySelector(".all-category");

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/detail2.css">
+    <link rel="stylesheet" href="./assets/css/login1.css">
+    <script src="assets/js/dungchung.js"></script>
+</head>
+<style>
+    .video {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .video .video-1 {
+        width: 65%;
+        height: 450px;
+    }
+
+    .video .video-1 iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .video .video-2 {
+        width: 35%;
+    }
+
+    .video .video-2 .reporter {
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .head-tit {
+        margin-bottom: 10px;
+    }
+
+    .video .video-2 .related button {
+        border-radius: 50px;
+        border: none;
+        padding: 5px;
+        width: 120px;
+    }
+
+    .video .video-2 .interactive {
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+    }
+
+    .video .video-2 .interactive a {
+        margin-right: 10px;
+    }
+
+    .video .video-2 .comment input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .video a {
+        color: black;
+    }
+
+    .audio {
+
+        text-align: center;
+        gap: 20px;
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+    .video-chung {
+        display: flex;
+    }
+
+    .video-khac {
+        width: 80%;
+    }
+
+    .video-khac-2 {
+        width: 20%;
+        border-left: 1px solid rgb(209, 206, 206);
+        padding-left: 15px;
+    }
+
+    .video-khac-2 img {
+        width: 100%;
+    }
+
+    .video-khac .video-khac-1 .video-grid {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <script>addHeader();</script>
+        </header>
+        <nav>
+            <script>
+                addNav();
+            </script>
+        </nav>
+        <main>
+            <div class="head-tit"><span><a href="index.html" style="color: #b4b3b3;">Trang chủ</a> </span>
+                <span>></span> <span>Video</span>
+            </div>
+            <div class="video">
+                <div class="video-1">
+                    <iframe
+                        src=https://player.sohatv.vn/embed/100228/?vid=tuoitre/2019/7/17/video-1563326784-15633388476782098422164-76592.mp4&autoplay=false&domain=tuoitre.vn&pathname=/video.htm&_info=70333
+                        data-type="video-iframe" frameborder="0" scrolling="no" allowfullscreen=""
+                        webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen=""
+                        msallowfullscreen=""></iframe>
+                </div>
+                <div class="video-2">
+                    <a href="#">
+                        <h2>Không hiểu tại sao họ lại nỡ lừa những người nghèo khổ và cơ cực như tụi tui nữa</h2>
+                    </a>
+                    <div class="category">
+                        <a href="#"><span>Xã hội&nbsp;</span></a>
+                        <span class="time">&middot;&nbsp;14 giờ trước</span>
+                    </div>
+                    <p>TTO - Từ câu chuyện cậu bé 13 tuổi bán vé số ở Quảng Nam bị một thanh niên lừa
+                        chở vào rừng, cướp tiền và đánh đập dã man, PV Tuổi Trẻ Online ghi nhận nhiều câu
+                        chuyện bị lừa lọc
+                        của người bán vé số.</p>
+                    <p class="reporter">LÊ TRUNG - ĐỨC TÀI</p>
+                    <div class="related">
+                        <a href="#"><button>Lừa đảo</button></a>
+                        <a href="#"><button>Vé số</button></a>
+                        <a href="#"><button>Đánh đập dã man</button></a>
+                        <a href="#"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    <div class="interactive">
+                        <a href="#"><i class="far fa-thumbs-up"></i> 0</a>
+                        <a href="#"><i class="far fa-comment-alt"></i> Viết bình luận</a>
+                        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </div>
+                    <div class="comment">
+                        <input type="text" name="comment" placeholder="Viết bình luận của bạn">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="audio">
+                <audio controls>
+                    <source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Trình duyệt của bạn không hỗ trợ âm thanh.
+                </audio>
+                <a href="">Những lời khai của cậu cậu bé 13 tuổi bán vé số ở Quảng Nam bị một thanh niên lừa chở vào
+                    rừng, cướp tiền và đánh đập dã man</a>
+            </div>
+            <div class="video-chung">
+                <div class="video-khac">
+                    <h3>VIDEO NỔI BẬT</h3>
+                    <div class="video-khac-1">
+                        <div class="video-grid">
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/174.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/178.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/179.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/180.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr color="aliceblue">
+                    <h3>VIDEO KHÁC</h3>
+                    <div class="video-khac-1">
+                        <div class="video-grid">
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="img/173.gif" alt="">
+                                <a href="#">
+                                    <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh</h5>
+                                </a>
+                                <div>
+                                    <a href="#"><span>Media&nbsp;</span></a>
+                                    <span class="time">&middot;&nbsp;18 giờ trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-khac-2">
+                    <h3 style="color: red;">XEM NHIỀU</h3>
+                    <div style="border-bottom: 1px solid rgb(209, 206, 206); margin-bottom: 10px;">
+                        <img src="img/179.gif" alt="">
+                        <a href="#">
+                            <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh
+                                sắt nhà ca sĩ Nhật Kim Anh
+                            </h5>
+                        </a>
+                        <div>
+                            <a href="#"><span>Media&nbsp;</span></a>
+                            <span class="time">&middot;&nbsp;18 giờ trước</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/179.gif" alt="">
+                        <a href="#">
+                            <h5>Video: Camera ghi hình kẻ trộm đang cạy két sắt nhà ca sĩ Nhật Kim Anh
+                                sắt nhà ca sĩ Nhật Kim Anh
+                            </h5>
+                        </a>
+                        <div>
+                            <a href="#"><span>Media&nbsp;</span></a>
+                            <span class="time">&middot;&nbsp;18 giờ trước</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer" style="display: flex;">
+                <div class="f-right">
+                    <ul class="list-menu-footer">
+
+                        <a href="">
+                            <li class="item-menu">Trang chủ</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Video</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Podcasts</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Ảnh</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Infographics</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu-bordertop" style="padding-top: 15px;border-top: 1px solid #e5e5e5;">Mới
+                                nhất
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Xem nhiều</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Tin nóng</li>
+                        </a>
+                    </ul>
+
+                    <ul class="list-menu-footer">
+                        <a href="">
+                            <li class="item-menu">Thời sự</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Góc nhìn </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Thế giới</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Kinh doanh</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Bất động sản</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Giải trí</li>
+                        </a>
+                    </ul>
+                    <ul class="list-menu-footer">
+                        <a href="">
+                            <li class="item-menu">Thể thao</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Pháp luật </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Thế giới</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Giáo dục</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Sức khỏe</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Du lịch</li>
+                        </a>
+                    </ul>
+                    <ul class="list-menu-footer">
+                        <a href="">
+                            <li class="item-menu">Khoa học </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Pháp luật </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Xe</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Ý kiến</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Tâm sự</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Thư giãn</li>
+                        </a>
+                    </ul>
+                    <ul class="list-menu-footer">
+                        <a href="">
+                            <li class="item-menu">Thể thao</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Pháp luật </li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Thế giới</li>
+                        </a>
+                        <a href="">
+                            <li class="item-menu">Giáo dục</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="f-left">
+                    <div>
+                        <p><b>Tải ứng dụng</b></p>
+                    </div>
+                    <div class="f-l-icon">
+                        <img src="img/android.png" alt="">
+                        <img src="img/iphone.png" alt="">
+                    </div>
+                    <div>
+                        <p><b>Liên hệ</b></p>
+                    </div>
+                    <div class="f-l-icon1">
+                        <div>
+                            <img src="img/f1.svg" alt="">
+                            <a>Tòa Soạn</a>
+                        </div>
+                        <div>
+                            <img src="img/f1.svg" alt="">
+                            <a>Hợp tác quảng cáo</a>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; margin-bottom: 15px;">
+                        <img src="img/f2.svg" alt="">
+                        <a>Hợp tác bản quyền</a>
+                    </div>
+                    <hr color="#e5e5e5">
+                    <div>
+                        <p><b>Đường dây nóng</b></p>
+                    </div>
+                    <div class="f-l-icon">
+                        <div class="f-lienhe">
+                            <p><b>012.345.6789</b></p>
+                            <p>(Hà Nội)</p>
+                        </div>
+                        <div class="f-lienhe">
+                            <p><b>012.345.6789</b></p>
+                            <p>(TP.Hồ Chí Minh)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer1" style="border-bottom: 1px solid #e5e5e5;">
+                <p style="position: relative;top: 3px;width: 100%;
+            text-align: center;">
+                    <a href="" style="color: black;">Báo điện tử 24h</a>
+
+                </p>
+                <div style="text-align: center;">
+                    <img width="200px" src="img/logoVn.jpg" alt="">
+                </div>
+                <div class="flexbox-footer" style="display: flex;">
+                    <a href="">Điều khoản sử dụng</a>
+                    <a href="" class="chung">Chính sách bảo mật</a>
+                    <a href="" class="chung">Cookies</a>
+                    <a href="" class="chung">Theo dõi </a>
+                </div>
+            </div>
+            <div class="footer2" style="display: flex;">
+                <p> <strong>Báo tiếng Việt nhiều người xem nhất</strong>
+                    <br>
+                    Thuộc Bộ Khoa học và Công nghệ
+
+                    <br>
+                    số mã ...........
+                </p>
+
+                <p>
+                    Tổng biên tập : Đinh Minh Phương
+                    <br>
+                    Địa chỉ: Tầng 1, Tòa A Phenikaa Yên nghĩa, Hà Đông, Hà Nội
+                    <br>
+                    Điện thoại: 012.345.6789 - máy lẻ 450000
+                </p>
+                <p style="text-align: right;">© 2023-2024. Toàn bộ bản quyền thuộc Phenikaa</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

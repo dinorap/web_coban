@@ -1,6 +1,6 @@
 :root {
     --text-blur-color: #a0a4a8;
-    --color-green-dan-tri: #1a7900;
+    --color-green-tin-tuc: #1a7900;
     --color-audio-background: #f1f5f9;
 }
 
@@ -86,55 +86,6 @@
 /* end article-author */
 
 /* article-audio */
-.article-audio {
-    background-color: var(--color-audio-background);
-    border-radius: 4rem;
-}
-.article-audio-container {
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.article-audio .play-button {
-    background-color: var(--color-green-dan-tri);
-    padding: 0.5rem;
-    width: 2.6rem;
-    height: 2.6rem;
-    border-radius: 50%;
-    position: relative;
-}
-
-.article-audio .play-button i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-
-.article-audio-container .audio-control {
-    width: 20%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: fit-content;
-}
-.article-audio-container .audio-track-bar {
-    width: 60%;
-    border-top: 4px solid #ccc;
-}
-.article-audio-container .audio-voice {
-    width: 20%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: fit-content;
-}
-/* end of article-audio */
 
 /* main article content */
 .article-preview-content {
@@ -272,14 +223,14 @@
     background-color: var(--color-audio-background);
 }
 .tag-container .tags li:hover a {
-    background-color: var(--color-green-dan-tri);
+    background-color: var(--color-green-tin-tuc);
     color: #fff;
 }
 /* end tags */
 
 /* being interested articles */
 .being-interested-container {
-    border-top: 2px solid var(--color-green-dan-tri);
+    border-top: 2px solid var(--color-green-tin-tuc);
     padding-top: 1rem;
 }
 .being-interested {
@@ -313,7 +264,7 @@
     font-size: 1.8rem;
 }
 .comment-container .left i {
-    color: var(--color-green-dan-tri);
+    color: var(--color-green-tin-tuc);
     padding-right: 0.5rem;
 }
 .comment-container .top .right span {

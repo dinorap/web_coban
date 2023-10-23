@@ -380,7 +380,7 @@ function addNav() {
                 <ul class="list-category">
                     <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
                     <li class="category-item">
-                        <a href="#">Video</a>
+                        <a href="video.html">Video</a>
                         <!-- category popup -->
                         <div class="category-popup">
                             <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
@@ -696,7 +696,7 @@ function addNav() {
             <div class="right-section-item">
                 <ul>
                     <li><a href="#">Gửi thư cho tòa soạn</a></li>
-                    <li><a href="#">Liên hệ quảng cáo</a></li>
+                    <li><a href="lienhe.html">Liên hệ quảng cáo</a></li>
                     <li class="follow">
                         <span>Theo dõi Dân trí trên:</span>
                         <div class="logo-social-media" style="padding-right: 1rem;">

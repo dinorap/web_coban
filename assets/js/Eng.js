@@ -11,8 +11,6 @@ const video = document.querySelector(".video");
 const free = document.querySelector(".free");
 
 linkBtn.forEach((btn) => {
-  // btn.classList.remove('selected');
-
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     let name = e.target.innerHTML.toLowerCase();

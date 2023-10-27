@@ -109,7 +109,7 @@ function addTK() {
             </form>
         </div>
         <div class="wapperjs" id="qmk" style="display: none;">
-        <form >
+        <form onsubmit="return forget(this);">
                 <a href="./index.html" class="headerjs">
                     <img src="./img/logo.png" alt="" />
                     <h3>Quên Mật Khẩu</h3>
@@ -118,9 +118,9 @@ function addTK() {
                     <input type="email" id="emailInput" name='emailInput' placeholder="Nhập Email" required />
                 </div>
                 <div class="buttonlog" >
-                <a href="#" onclick="validateEmail()">
-        <input id="btQmk" type="button" value="Quên Mật Khẩu" />
-    </a>
+                    <a>
+                        <input id="btQmk" type="submit"  value="Quên Mật Khẩu" />
+                    </a>
                 </div>
                 <div class="hr">
                     <hr>
@@ -281,79 +281,19 @@ function logOut() {
   window.location.href = "index.html";
 }
 
-function resetPassword(email, newPassword) {
-  sendEmailNotification(email, newPassword);
+function forget(form) {
+  const forgetModal = document.getElementById("qmk");
+  const signupModal = document.getElementById("signup");
+  // Lấy dữ liệu từ form
 
-  // Hiển thị thông báo cho người dùng sử dụng SweetAlert2
-  Swal.fire({
-    icon: "success",
-    title: "Mật khẩu mới đã được gửi",
-    text: `Mật khẩu mới đã được gửi đến ${email}. Vui lòng kiểm tra email của bạn.`,
-    confirmButtonText: "OK",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      // Chuyển hướng trang web về index.html hoặc trang khác
+  // Mã hóa mật khẩu đăng nhập
 
-      sendEmailNotification(email, newPassword);
-    }
-  });
-}
+  // Định dạng email hợp lệ, hiển thị thông báo
+  alert("Mật khẩu mới đã được gửi về Email của bạn");
+  forgetModal.style.display = "none";
+  signupModal.style.display = "block";
 
-function sendEmailNotification(email, newPassword) {
-  emailjs.init("T0kVSb9470O5Pa9IH");
-  var templateParams = {
-    to_email: email, // Địa chỉ email người nhận
-    to_name: email,
-    Text: newPassword, //
-  };
-
-  // Sử dụng public key thay thế cho User ID
-  emailjs
-    .send("service_947rffi", "template_f4prki8", templateParams) // Thay your_service_id và your_template_id bằng thông tin tương ứng của bạn
-    .then(
-      function (response) {
-        console.log("Email đã được gửi thành công: ", response);
-      },
-      function (error) {
-        console.log("Lỗi khi gửi email: ", error);
-      }
-    );
-}
-
-// Hàm tạo mật khẩu ngẫu nhiên
-function generateRandomPassword(length) {
-  const charset =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  let password = "";
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset.charAt(randomIndex);
-  }
-  return password;
-}
-
-function validateEmail() {
-  const email = document.getElementById("emailInput").value;
-  if (isValidEmail(email)) {
-    const newPassword = generateRandomPassword(8);
-    resetPassword(email, newPassword);
-    const forgetModal = document.getElementById("qmk");
-    const signinModal = document.getElementById("signin");
-    signinModal.style.display = "block";
-    forgetModal.style.display = "none";
-  } else {
-    Swal.fire({
-      icon: "error",
-      title: "Email không hợp lệ",
-      text: "Vui lòng nhập một địa chỉ email hợp lệ.",
-      confirmButtonText: "OK",
-    });
-  }
-}
-
-function isValidEmail(email) {
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  return emailPattern.test(email);
+  return false;
 }
 function signUp(form) {
   var email = form.email.value;
@@ -478,8 +418,8 @@ function addNav() {
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga -
+                                    Ukraine</li>
                         </div></li>
                     <li class="category-item"><a href="bieudo.html">Kinh tế</a>
                     <div class="category-popup">
@@ -489,164 +429,21 @@ function addNav() {
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
                                 <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div>
-                      </li>
-                    <li class="category-item"><a href="#">Kinh doanh</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Bất động sản</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Thể thao</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Việc làm</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Nhân ái</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Sức khỏe</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Văn hóa</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Giải trí</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Giáo dục</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Đời sống</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Công nghệ</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Kiến thức</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">Nghệ Thuật</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
-                    <li class="category-item"><a href="#">DMPI</a>
-                    <div class="category-popup">
-                            <span class="up-arrow"><i class="fa-solid fa-caret-up"></i></span>
-                            <ul class="list-category-popup">
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Quân sự</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Hồ sơ phân tích </li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Thế giới đó đây</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Kiều bào</li>
-                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga - Ukraine</li>
-                            </ul>
-                        </div></li>
+                                <li><span class="minus"><i class="fa-solid fa-minus"></i></span> Căng thẳng Nga -
+                                    Ukraine</li>
+                        </div></li></li>
+                    <li class="category-item"><a href="#">Kinh doanh</a></li>
+                    <li class="category-item"><a href="#">Bất động sản</a></li>
+                    <li class="category-item"><a href="#">Thể thao</a></li>
+                    <li class="category-item"><a href="#">Việc làm</a></li>
+                    <li class="category-item"><a href="#">Nhân ái</a></li>
+                    <li class="category-item"><a href="#">Sức khỏe</a></li>
+                    <li class="category-item"><a href="#">Văn hóa</a></li>
+                    <li class="category-item"><a href="#">Pháp luật</a></li>
+                    <li class="category-item"><a href="#">Đời sống</a></li>
+                    <li class="category-item"><a href="#">Khoa học - Công nghệ</a></li>
+                    <li class="category-item"><a href="#">Thể Thao</a></li>
+                    <li class="category-item"><a href="#">Giáo Dục</a></li>                  
                     <li class="three-dots" style="font-size: 15px;">&#160;&#9776;&#160;&#160;</li>
                     <li class="btn-close-category" style="display: none;"><i style="font-size: 1.4rem; color: #0f6c32;"
                             class="fa-regular fa-circle-xmark"></i></li>
@@ -657,13 +454,13 @@ function addNav() {
         <div class="all-category" style="display: none;">
         <div class="all-category-left-section">
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Văn hoá - Giải trí</a></li>
+                <li class="sub-category"><a href="#">Sao Việt</a></li>
+                <li><a href="#">Sao thế giới</a></li>
+                <li><a href="#">Phim</a></li>
+                <li><a href="#">Ca Nhạc</a></li>
+                <li><a href="#">Hoa Hậu</a></li>
+                <li><a href="#">Trends</a></li>
             </ul>
             <ul class="group-category-sub-category">
                 <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
@@ -672,197 +469,71 @@ function addNav() {
                 <li><a href="#">Môi trường</a></li>
                 <li><a href="#">Giao thông</a></li>
                 <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+               
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Sức khoẻ</a></li>
+                <li class="sub-category"><a href="#">Covid - 19</a></li>
+                <li><a href="#">Tin Tức</a></li>
+                <li><a href="#">Dinh dưỡng</a></li>
+                <li><a href="#">Bệnh và thuốc</a></li>
+                <li><a href="#">Giới tính</a></li>
+                <li><a href="#">Khác</a></li>
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Thể Thao</a></li>
+                <li class="sub-category"><a href="#">Thể thao Việt Nam</a></li>
+                <li><a href="#">Bóng đá</a></li>
+                <li><a href="#">Esport</a></li>
+                <li><a href="#">Lịch thi đấu </a></li>
+                <li><a href="#">Tennis</a></li>
+                <li><a href="#">Thể thao thế giới</a></li>
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Đời sống</a></li>
+                <li class="sub-category"><a href="#">Giới trẻ</a></li>
+                <li><a href="#">Chuyện bốn phương</a></li>
+                <li><a href="#">Gia đình</a></li>
+                <li><a href="#">Ý kiến</a></li>
+                
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Giáo dục</a></li>
+                <li class="sub-category"><a href="#">Tin tức</a></li>
+                <li><a href="#">Diễn dàn</a></li>
+                <li><a href="#">Tuyển sinh</a></li>
+                <li><a href="#">Du học</a></li>
+                <li><a href="#">Học tiếng Anh</a></li>
+               
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Kinh tế</a></li>
+                <li class="sub-category"><a href="#">Đầu tư</a></li>
+                <li><a href="#">Tài Chính</a></li>
+                <li><a href="#">Bất động sản</a></li>
+                <li><a href="#">Thị trường</a></li>
+                <li><a href="#">Doanh nhân</a></li>
+                
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Khoa học - Công nghệ</a></li>
+                <li class="sub-category"><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Khám phá</a></li>
+                <li><a href="#">AI</a></li>
+                <li><a href="#">Thủ Thuật</a></li>
+                <li><a href="#">Chuyển đổi số </a></li>
+              
             </ul>
             <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
+                <li class="category-title"><a href="#" class="text-uppercase">Pháp Luật</a></li>
+                <li class="sub-category"><a href="#">Luật pháp Việt Nam</a></li>
+                <li><a href="#">Hòm thư pháp luật</a></li>
+                <li><a href="#">Bản tin 113</a></li>
+                
+               
             </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
-            <ul class="group-category-sub-category">
-                <li class="category-title"><a href="#" class="text-uppercase">Xã hội</a></li>
-                <li class="sub-category"><a href="#">Chỉnh trị</a></li>
-                <li><a href="#">Học tập Bác</a></li>
-                <li><a href="#">Môi trường</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Nóng trên mạng</a></li>
-                <li><a href="#">Sáng kiến an toàn giao thông</a></li>
-            </ul>
+          
+            
 
         </div>
         <div class="all-category-right-section">
